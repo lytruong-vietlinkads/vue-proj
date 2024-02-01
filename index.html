@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/toyota-poc.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>つながるSL</title>
+    <script
+      type="text/javascript"
+      src="/loggly.tracker-2.2.4.min.js"
+      async
+    ></script>
+    <script>
+      var _LTracker = _LTracker || [];
+      _LTracker.push({
+        logglyKey: "e1936c57-b169-40c0-9d0b-7506751c725c",
+        sendConsoleErrors: true,
+        tag: "loggly-jslogger",
+      });
+      window._LTracker = _LTracker;
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
