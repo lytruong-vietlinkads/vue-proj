@@ -11,7 +11,6 @@ const readAllFile = (result = [], folder) => {
     const fullPath = `${folder}/${file}`;
     let stats = fs.statSync(fullPath);
     if (stats.isFile()) {
-      console.log('is file')
       result.push(fullPath);
     } else {
       readAllFile(result, fullPath);

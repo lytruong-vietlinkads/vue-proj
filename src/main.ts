@@ -15,23 +15,25 @@ import "vue3-toastify/dist/index.css";
 import VueCookies from "vue-cookies";
 import { createRouter, createWebHistory } from "vue-router";
 
-const modules = import.meta.env.VITE_MODULES ? import.meta.env.VITE_MODULES.split(",") : [];
-console.log('modules', modules)
+const modules = import.meta.env.VITE_MODULES
+  ? import.meta.env.VITE_MODULES.split(",")
+  : [];
+console.log("modules", modules);
 let routes = [];
 if (modules.length === 0) {
   routes.push(...accountRouter);
   routes.push(...productRouter);
   routes.push(...carRouter);
 } else {
-  if (modules.includes('account')) {
+  if (modules.includes("account")) {
     routes.push(...accountRouter);
   }
 
-  if (modules.includes('product')) {
+  if (modules.includes("product")) {
     routes.push(...productRouter);
   }
 
-  if (modules.includes('car')) {
+  if (modules.includes("car")) {
     routes.push(...carRouter);
   }
 }
@@ -47,9 +49,12 @@ app.use(Vue3Toastify, {
 app.use(VueCookies);
 app.config.globalProperties.window = window;
 
-routes.push({ path: '/:pathMatch(.*)*', component: () => import("@/components/Share/PageNotFound.vue") })
+routes.push({
+  path: "/:pathMatch(.*)*",
+  component: () => import("@/components/Share/PageNotFound.vue"),
+});
 
-console.log(routes)
+console.log(routes);
 const router = createRouter({
   history: createWebHistory(""), // Set base path
   routes,

@@ -19,11 +19,11 @@ import { CategoryTag } from "@/interfaces/image";
 import message from "@/lang/ja";
 
 const commonStore = useCommonStore();
-console.log('commonStore', commonStore);
+console.log("commonStore", commonStore);
 const router = useRouter();
-console.log('router', router);
+console.log("router", router);
 const route = useRoute();
-console.log('route', route);
+console.log("route", route);
 
 const parentData = computed(() => {
   let categories = Object.values(CATEGORY_TAG);
@@ -37,7 +37,7 @@ const parentData = computed(() => {
   return categories;
 });
 
-console.log('parentData', parentData)
+console.log("parentData", parentData);
 
 const shouldConfirmWhenRedirect = ref<boolean>(true);
 
@@ -51,7 +51,7 @@ onBeforeRouteLeave((_to, _from, next) => {
 commonStore.setLoading(true);
 setTimeout(() => {
   commonStore.setLoading(false);
-}, 1000)
+}, 1000);
 </script>
 
 <style lang="scss" scoped></style>

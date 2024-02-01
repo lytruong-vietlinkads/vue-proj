@@ -20,3 +20,8 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 # start
 1. npm i
 2. npm run dev
+
+## Modules
+If add new module, 
+1. Update router at src/main.ts
+2. Update building at vite.config.ts

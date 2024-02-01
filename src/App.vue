@@ -1,6 +1,6 @@
 <template>
   <router-view />
-  <loading-overlay :status="commonStore.loading"/>
+  <loading-overlay :status="commonStore.loading" />
 </template>
 
 <script setup lang="ts">

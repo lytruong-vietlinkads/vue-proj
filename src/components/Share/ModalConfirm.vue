@@ -23,11 +23,7 @@
           <button type="button" class="btn btn-primary" @click="confirmClick">
             {{ modalInfo.confirm }}
           </button>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="closeClick"
-          >
+          <button type="button" class="btn btn-secondary" @click="closeClick">
             {{ modalInfo.close }}
           </button>
         </div>
@@ -43,7 +39,7 @@ interface Props {
   needOverlay?: boolean;
 }
 withDefaults(defineProps<Props>(), {
-  needOverlay: true
+  needOverlay: true,
 });
 
 const emit = defineEmits<{
@@ -58,7 +54,7 @@ function closeClick() {
 }
 </script>
 <style scoped>
-.modal{
+.modal {
   display: block;
 }
 .modal-header {

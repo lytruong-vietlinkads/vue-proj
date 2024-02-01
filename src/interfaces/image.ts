@@ -34,17 +34,17 @@ export interface InfoData {
 }
 
 export interface CategoryTag {
-  key?: string,
-  value: string,
-  displayName: string,
-  tags: Array<string>
+  key?: string;
+  value: string;
+  displayName: string;
+  tags: Array<string>;
 }
 
 export interface ModalInfo {
-  id: string,
-  title: string,
-  content: string,
-  close: string,
-  confirm: string,
-  show: boolean,
+  id: string;
+  title: string;
+  content: string;
+  close: string;
+  confirm: string;
+  show: boolean;
 }
