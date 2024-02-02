@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ lang("account.create.label") }}</h1>
+    <h1>{{ t("account.create.label") }}</h1>
     <div class="form-group">
       <div for="exampleInputEmail1">Email address</div>
       <input
@@ -39,7 +39,7 @@ import { createUser } from "../services";
 import { useCommonStore } from "@/store/common";
 import { User } from "../interfaces";
 
-const lang = inject("lang");
+const t = inject("t");
 const commonStore = useCommonStore();
 const user = ref<User>({
   id: null,

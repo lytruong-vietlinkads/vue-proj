@@ -12,7 +12,7 @@ const { t } = useI18n({
   inheritLocale: true,
 });
 const commonStore = useCommonStore();
-provide('lang', t);
+provide('t', t);
 </script>
 
 <style scoped>
