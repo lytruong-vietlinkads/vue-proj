@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome",
+  "language": "en",
+  "account": {
+    "list": {
+      "label": "Account list"
+    },
+    "create": {
+      "label": "Account create"
+    }
+  }
+}

@@ -14,6 +14,7 @@ import Vue3Toastify, { type ToastContainerOptions } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import VueCookies from "vue-cookies";
 import { createRouter, createWebHistory } from "vue-router";
+import i18n from "./i18n";
 
 const modules = import.meta.env.VITE_MODULES
   ? import.meta.env.VITE_MODULES.split(",")
@@ -51,7 +52,7 @@ app.config.globalProperties.window = window;
 
 routes.push({
   path: "/:pathMatch(.*)*",
-  component: () => import("@/components/Share/PageNotFound.vue"),
+  component: () => import("@/components/PageNotFound.vue"),
 });
 
 console.log(routes);
@@ -60,4 +61,5 @@ const router = createRouter({
   routes,
 });
 app.use(router);
+app.use(i18n);
 app.mount("#app");

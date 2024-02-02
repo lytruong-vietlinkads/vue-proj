@@ -4,6 +4,9 @@ import path from "path";
 import legacy from "@vitejs/plugin-legacy";
 import { fileURLToPath } from "node:url";
 import fs from "fs";
+import { resolve, dirname } from "node:path";
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
+
 const MODULES_MASTER = ["account", "product", "car"];
 const readAllFile = (result = [], folder) => {
   if (!folder) return result;
@@ -26,8 +29,10 @@ export default defineConfig(({ command, mode }) => {
   const filesNeedToExclude = [];
   if (modules.length !== 0) {
     MODULES_MASTER.forEach((_module) => {
+      // do not build
+      const modulePath = `src/modules/${_module}`;
       if (!modules.includes(_module)) {
-        filesNeedToExclude.push(`src/modules/${_module}`);
+        filesNeedToExclude.push(modulePath);
       }
     });
   }
@@ -40,7 +45,6 @@ export default defineConfig(({ command, mode }) => {
     fileExclude.push(...readAllFile([], path));
   });
   console.log("fileExclude", fileExclude);
-  // console.log('filesPathToExclude', filesPathToExclude)
   return {
     plugins: [
       legacy({
@@ -48,13 +52,12 @@ export default defineConfig(({ command, mode }) => {
         targets: ["defaults"],
       }),
       vue(),
+      VueI18nPlugin({
+        include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/**'),
+      }),
     ],
     resolve: {
       alias: [
-        {
-          find: "~",
-          replacement: path.resolve(__dirname, ""),
-        },
         {
           find: "@",
           replacement: path.resolve(__dirname, "src"),

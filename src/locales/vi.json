@@ -1,0 +1,12 @@
+{
+  "welcome": "Chào mừng",
+  "language": "vi",
+  "account": {
+    "list": {
+      "label": "Danh sách tài khoản"
+    },
+    "create": {
+      "label": "Tạo tài khoản"
+    }
+  }
+}

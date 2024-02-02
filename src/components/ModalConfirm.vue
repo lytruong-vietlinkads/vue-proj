@@ -33,7 +33,7 @@
 </template>
 <script setup lang="ts">
 import { ModalInfo } from "@/interfaces/image";
-import Overlay from "@/components/Share/Overlay.vue";
+import Overlay from "@/components/Overlay.vue";
 interface Props {
   modalInfo: ModalInfo;
   needOverlay?: boolean;

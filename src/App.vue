@@ -4,10 +4,15 @@
 </template>
 
 <script setup lang="ts">
+import { provide } from "vue";
 import { useCommonStore } from "@/store/common";
-import LoadingOverlay from "@/components/Share/LoadingOverlay.vue";
+import LoadingOverlay from "@/components/LoadingOverlay.vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n({
+  inheritLocale: true,
+});
 const commonStore = useCommonStore();
-// provide()
+provide('lang', t);
 </script>
 
 <style scoped>
