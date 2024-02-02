@@ -27,7 +27,7 @@ export default defineConfig(({ command, mode }) => {
   if (modules.length !== 0) {
     MODULES_MASTER.forEach((_module) => {
       if (!modules.includes(_module)) {
-        filesNeedToExclude.push(`modules/${_module}`);
+        filesNeedToExclude.push(`src/modules/${_module}`);
       }
     });
   }

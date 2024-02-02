@@ -1,11 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import accountRouter from "../modules/account/router";
-import productRouter from "../modules/product/router";
-import carRouter from "../modules/car/router";
+import accountRouter from "./modules/account/router";
+import productRouter from "./modules/product/router";
+import carRouter from "./modules/car/router";
 import "es6-promise/auto"; // Import polyfill es6-promise
 import { createPinia } from "pinia";
-import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+// import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import "@/style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
@@ -39,7 +39,7 @@ if (modules.length === 0) {
 }
 
 const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate);
+// pinia.use(piniaPluginPersistedstate);
 
 const app = createApp(App);
 app.use(pinia);
